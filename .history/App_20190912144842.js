@@ -297,7 +297,7 @@ return(
            color='#517fa5' />}
         
           platform="android"
-          placeholder="Digite o produto..."
+          placeholder="Digite o nome do produto..."
           onChangeText={this.updateSearch}
           value={search}
        />  
