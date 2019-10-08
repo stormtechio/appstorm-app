@@ -10,8 +10,25 @@ import React, {
     Icon
    } from './styled'
   
+   import { 
+    createAppContainer, 
+    createStackNavigator, 
+    StackActions, 
+    NavigationActions, 
+    createBottomTabNavigator
+  
+   } from 'react-navigation';
 
+    
+
+import { Alert } from 'react-native';
    export class BottomNavigator extends Component {
+
+
+    constructor(props){
+      super(props)
+    }
+
     state = {
       menuItems: [
         { name: 'Produtos' },
@@ -21,8 +38,42 @@ import React, {
       ],
     }
        renderMenusItems = ({ name }, index) => (
-      <NavigatorBox key={`${name}-${index}`}>
+
+        
+      <NavigatorBox 
+     
+     
+      onPress={() => 
+        {if(name == 'Produtos'){
+          this.props.navigation.navigate('Product')
+        }else if(name == 'Carrinho'){
+          this.props.navigation.navigate('Carrinho')
+        }else if(name == 'Pedidos'){
+          this.props.navigation.navigate('Pedido')
+        }else if(name == 'Perfil'){
+          this.props.navigation.navigate('Perfil')
+        }
+        }
+      }
+       
+      key={`${name}-${index}`}>
          {/* <Icon height={40} width={40}  />  */}
+
+
+         {/* onPress={() => 
+        {if(index == 0){
+          this.props.navigation.navigate('Product')
+        }else if(index == 1){
+          this.props.navigation.navigate('Carrinho')
+        }else if(index == 2){
+          this.props.navigation.navigate('Pedido')
+        }else if(index == 3){
+          this.props.navigation.navigate('Perfil')
+        }
+        }
+      } */}
+
+         
         <Title>{name}</Title>
       </NavigatorBox>
     )
@@ -30,6 +81,7 @@ import React, {
     render() {
     
       const { menuItems } = this.state
+     
     
       return (
     <NavigatorContent>
@@ -47,3 +99,6 @@ import React, {
       );
     }
     }
+
+
+

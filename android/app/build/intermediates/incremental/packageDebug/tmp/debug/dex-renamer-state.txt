@@ -1,0 +1,4 @@
+#Thu Oct 03 10:48:07 BRT 2019
+base.0=/home/saori/jobstorm/appstormapp/android/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+path.0=classes.dex

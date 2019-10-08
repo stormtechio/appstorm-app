@@ -73,7 +73,13 @@ import {
 
 //  import { Searchbar } from 'react-native-paper';
 
+import Product from './product'
 
+import Carrinho from './carrinho'
+
+import Pedido from './pedidos'
+
+import Perfil from './perfil'
 class Login extends React.Component{
 
   static navigationOptions = {
@@ -308,7 +314,7 @@ return(
         <SwiperContainer/>
 
         
-        <BottomNavigator/>
+        <BottomNavigator navigation={this.props.navigation}/>
 </HomeContainer>
 
 );
@@ -411,7 +417,11 @@ const AppNavigator = createStackNavigator({
  
   Login: Login,
   Register: Register,
-  Main: Main
+  Main: Main,
+  Product: Product,
+  Carrinho: Carrinho,
+  Pedido: Pedido,
+  Perfil: Perfil
  }, 
  {
     initialRouteName: 'Login',
